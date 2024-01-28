@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - batch.6740.io
+  resources:
+  - sleepynodes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - batch.6740.io
+  resources:
+  - sleepynodes/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - batch.6740.io
+  resources:
+  - sleepynodes/status
+  verbs:
+  - get
+  - patch
+  - update

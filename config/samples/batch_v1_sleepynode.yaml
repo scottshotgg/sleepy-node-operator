@@ -1,0 +1,12 @@
+apiVersion: batch.6740.io/v1
+kind: SleepyNode
+metadata:
+  labels:
+    app.kubernetes.io/name: sleepynode
+    app.kubernetes.io/instance: sleepynode-sample
+    app.kubernetes.io/part-of: sleepy-node-scheduler
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: sleepy-node-scheduler
+  name: sleepynode-sample
+spec:
+  # TODO(user): Add fields here

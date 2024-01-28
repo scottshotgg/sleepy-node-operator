@@ -1,0 +1,31 @@
+# permissions for end users to edit sleepynodes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: sleepynode-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: sleepy-node-scheduler
+    app.kubernetes.io/part-of: sleepy-node-scheduler
+    app.kubernetes.io/managed-by: kustomize
+  name: sleepynode-editor-role
+rules:
+- apiGroups:
+  - batch.6740.io
+  resources:
+  - sleepynodes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - batch.6740.io
+  resources:
+  - sleepynodes/status
+  verbs:
+  - get
